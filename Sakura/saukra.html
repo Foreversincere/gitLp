@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>樱花</title>
+    <link href="css/sakura.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/sakura.js"></script>
+    <script>
+        window.onload=function () {
+            var container = document.querySelector('.container');//获取div属性
+            var rate = 5000;//间隔时间
+            var i = 1;//循环参数
+            setInterval(function () {//每隔5秒换一次
+
+                    if (i<4){
+                        container.style.backgroundImage = "url(img/a" + i + ".jpg)";
+                        i++
+                    }
+                    if (i>=4){
+                        i=0;
+                    }
+                //i = i % 4;
+
+            }, rate);
+
+        }
+    </script>
+</head>
+<body>
+    <div id="sakura" class="container" style="background-image: url(img/a0.jpg) ">
+        <!--音乐播放-->
+        <audio src="music/sakura.mp3" autoplay="autoplay" loop="loop" id="audio"></audio>
+    </div>
+</body>
+</html>
